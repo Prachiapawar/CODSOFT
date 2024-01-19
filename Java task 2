@@ -1,0 +1,51 @@
+import java.lang.Math;
+import java.util.Scanner;
+
+public class task_01 {
+	public static void main(String[] args) {
+		
+		int min = 1;
+		int max = 100;
+		int round;
+		int i = 0;
+		int wins = 0;
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter the no of Rounds - ");
+		round = sc.nextInt();
+		
+		while(i < round){
+			System.out.println("Round : "+(i+1));
+			
+		int random_num = (int)(Math.random()*(max-min+1)+min); ;
+		
+		  System.out.println("Guess The Number Between 1 to 100 - ");
+		  int attempts = 0;
+		  boolean flag = true;
+		  
+		  while(flag){
+		  System.out.print("enter Number : ");
+		  int num = sc.nextInt();
+		  
+		  if(num == random_num){
+            attempts++;
+		  	System.out.println("Tou won......");
+		  	System.out.println("Total Attemps : "+attempts);
+		  	wins++;
+		  	flag = false;
+		  	
+		  }
+		  else if(num > random_num){
+            attempts++;
+		  	System.out.println("Your entered number is Larger......");
+		  }
+		  else{
+            attempts++;
+		  	System.out.println("Your entered number is Smaller .....");
+		  }
+		  }
+		  i++;
+		}
+		System.out.println("You have won "+wins+" Rounds out of "+round);
+	}
+}
